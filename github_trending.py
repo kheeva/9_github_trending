@@ -3,8 +3,9 @@ import requests
 
 
 def get_trending_repositories(top_size):
-    url = 'https://api.github.com/search/repositories?q=created&sort=stars'
-    return requests.get(url).json()['items'][:top_size]
+    url = 'https://api.github.com/search/repositories'
+    payload = {'q': 'created', 'sort': 'stars'}
+    return requests.get(url, params=payload).json()['items'][:top_size]
 
 
 if __name__ == '__main__':
