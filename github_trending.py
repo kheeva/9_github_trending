@@ -1,11 +1,14 @@
+#!/usr/bin/env python
+import requests
 
 
 def get_trending_repositories(top_size):
-    pass
+    url = 'https://api.github.com/search/repositories?q=created&sort=stars'
+    return requests.get(url).json()['items'][:top_size]
 
-
-def get_open_issues_amount(repo_owner, repo_name):
-    pass
 
 if __name__ == '__main__':
-    pass
+    top_size = 20
+    print('There are top {} repos in https://github.com:'.format(top_size))
+    for repo in get_trending_repositories(top_size):
+        print(repo['html_url'], 'open_issues:', repo['open_issues_count'])
