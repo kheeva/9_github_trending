@@ -1,5 +1,5 @@
 # Github Trends
-Seeks top 20 repos in github. Counts open issues by each repo.
+Seeks top 20 repos created last week in github. Counts open issues by each repo.
 
 # How to Install
 You just need to download and install python3 if you already haven't: http://python.org .
